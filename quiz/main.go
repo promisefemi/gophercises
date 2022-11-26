@@ -42,6 +42,7 @@ func main() {
 	correct := 0
 	answerChan := make(chan string)
 	// loop through the problems
+	fmt.Printf("%s %d %s %d %s \n\n", "You have only ", *timeLimit, "second(s) to complete ", len(problems), " questions.")
 	for i, problem := range problems {
 		fmt.Printf("Problem #%d, %s =\n", i+1, problem.Q)
 		//Create go routines for
@@ -53,6 +54,7 @@ func main() {
 		}()
 		select {
 		case <-timmer.C:
+			fmt.Printf("\n %s \n", "You have exceeded your alloted time.")
 			fmt.Printf("\nYou scored %d out of %d\n", correct, len(problems))
 			return
 		case answer := <-answerChan:
