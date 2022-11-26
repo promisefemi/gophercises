@@ -54,7 +54,7 @@ func main() {
 		}()
 		select {
 		case <-timmer.C:
-			fmt.Printf("\n %s \n", "You have exceeded your alloted time.")
+			fmt.Printf("\n%s \n", "You have exceeded your alloted time.")
 			fmt.Printf("\nYou scored %d out of %d\n", correct, len(problems))
 			return
 		case answer := <-answerChan:
