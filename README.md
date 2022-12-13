@@ -1,3 +1,3 @@
 # gophercises
 
-My implementation of the popular gophercises excercise
+My implementation of the popular gophercises
